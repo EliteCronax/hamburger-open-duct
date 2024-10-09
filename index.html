@@ -17,9 +17,51 @@
             height: 100%;
             border: none;
         }
+        #panic-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        #panic-image {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            z-index: 2000;
+        }
     </style>
 </head>
 <body>
     <iframe src="https://oceanstudies.lat" title="🤫"></iframe>
+    <div id="panic-button">🙀</div>
+    <img id="panic-image" src="https://raw.githubusercontent.com/EliteCronax/hamburger-open-induct/refs/heads/main/favicon/panic.ico" alt="Panic!">
+
+    <script>
+        const panicButton = document.getElementById('panic-button');
+        const panicImage = document.getElementById('panic-image');
+
+        function togglePanicImage() {
+            panicImage.style.display = panicImage.style.display === 'none' ? 'block' : 'none';
+        }
+
+        panicButton.addEventListener('click', togglePanicImage);
+
+        document.addEventListener('keydown', function(event) {
+            if (event.altKey) {
+                togglePanicImage();
+            }
+        });
+
+        document.addEventListener('click', function(event) {
+            if (event.target !== panicButton && event.target !== panicImage) {
+                panicImage.style.display = 'none';
+            }
+        });
 </body>
 </html>
