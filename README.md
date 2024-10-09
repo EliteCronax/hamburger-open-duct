@@ -1,3 +1,6 @@
-# hamburger-open-duct
+# hamburger-open-induct
 
-this is disguised as a proxy so keep quiet
+🤫
+
+# Glossary:
+🙀 - Panic button
